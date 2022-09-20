@@ -9,7 +9,7 @@ public class ExceptionHandling {
 		System.out.println("Enter two numbers: ");
 		int num1 = sc.nextInt();
 		int num2 = sc.nextInt();
-		division(num1, num2);
+//		division(num1, num2);
 		System.out.println("Div: " + div(num1, num2));
 		System.out.println("End of program");
 	}
@@ -21,10 +21,11 @@ public class ExceptionHandling {
 			throw new InputMismatchException("Manually thrown exception");
 		} catch (ArithmeticException e) {
 			System.out.println(e);
+			e.printStackTrace();
 			System.out.println("Enter a non-zero divisor");
 		} catch(Exception ex)
 		{
-			System.out.println(ex);
+			ex.printStackTrace();
 			System.out.println("Inside 'Exception' catch block");
 		} finally {
 			System.out.println("Inside finally");
