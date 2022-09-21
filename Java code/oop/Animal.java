@@ -1,8 +1,8 @@
 package oop;
 
 public class Animal {
-	String name;
-	String habitat;
+	private String name;
+	private String habitat;
 	
 	Animal(){}
 	
@@ -12,6 +12,22 @@ public class Animal {
 		this.habitat=habitat;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getHabitat() {
+		return habitat;
+	}
+
+	public void setHabitat(String habitat) {
+		this.habitat = habitat;
+	}
+
 	public void eat()
 	{
 		System.out.println("Eating");
