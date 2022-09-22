@@ -10,6 +10,7 @@ public class Main {
 //		System.out.println(dog.getName());
 		
 		dog.eat();
+		dog.eat("Chicken");
 		dog.run();
 		dog.sleep();
 	}
