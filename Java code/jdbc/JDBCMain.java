@@ -9,8 +9,25 @@ public class JDBCMain {
 		
 		//Register the driver
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con= DriverManager.getConnection(url,uname,pass);
-		System.out.println("Success");
 		
+		//Establish the connection
+		Connection con= DriverManager.getConnection(url,uname,pass);
+
+		//Create a statement
+		Statement st= con.createStatement();
+		
+		//Execute the query
+		int n= st.executeUpdate("insert into student values (21,'Arun Kumar','arunkumar@gmail.com',25)");
+		System.out.println(n+" rows affected.");		
+		ResultSet rs= st.executeQuery("select * from student");
+		
+		//Process the results
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1)+" | "+ rs.getString(2)+" | "+ rs.getString(3)+" | "+rs.getInt(4));
+		}
+		
+		//Close the connection
+		con.close();
 	}
 }
